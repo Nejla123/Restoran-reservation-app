@@ -16,9 +16,9 @@ public class SmokeTest {
 	private String loginPasswordField = "probniemail";
 	private String searchBarField = "Panera";
 	private String guestsField = "3";
-	private String dayField = "30";
-	private String monthField = "Dec";
-	private String yearField = "2018";
+	private String dayField = "1";
+	private String monthField = "Feb";
+	private String yearField = "2019";
 	private String timeField1 = "2";
 	private String timeField2 = "00";
 
