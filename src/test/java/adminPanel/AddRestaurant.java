@@ -77,7 +77,7 @@ public class AddRestaurant {
 		admin.setNameOfDish2(nameFieldForDish2);
 		admin.chooseTypeOfDish2();
 		admin.setPrice2(priceOfDish2);
-		makeReservation.scrollDown2();
+		makeReservation.scrollDownLittle();
 		admin.setNameOfDish3(nameFieldForDish3);
 		admin.chooseTypeOfDish3();
 		admin.setPrice3(priceOfDish3);

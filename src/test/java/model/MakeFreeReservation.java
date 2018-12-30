@@ -85,7 +85,7 @@ public class MakeFreeReservation {
 	WebElement findTableButton;
 
 	@FindBy(xpath = "/html/body/div[2]/div[1]/div[3]/div[2]/div/img")
-	WebElement object;
+	WebElement searchReservationResultElement;
 
 	@FindBy(xpath = "//*[@id=\"Reservation\"]/form/div/div[4]/button")
 	WebElement findTableButton2;
@@ -217,9 +217,9 @@ public class MakeFreeReservation {
 
 	}
 
-	public void clickOnObject() throws InterruptedException {
-		Thread.sleep(1000);
-		object.click();
+	public void clickSearchReservationResult() throws InterruptedException {
+//		Thread.sleep(1000);
+		searchReservationResultElement.click();
 
 	}
 
@@ -240,7 +240,7 @@ public class MakeFreeReservation {
 
 	}
 
-	public void scrollDown2() throws InterruptedException {
+	public void scrollDownLittle() throws InterruptedException {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(100,400)");
 		Thread.sleep(1000);

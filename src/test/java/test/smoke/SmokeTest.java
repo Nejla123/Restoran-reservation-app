@@ -46,9 +46,9 @@ public class SmokeTest {
 		makeReservation.setTime1(timeField1);
 		makeReservation.setTime2(timeField2);
 		makeReservation.clickOnFindTableButton();
-		makeReservation.scrollDown2();
+		makeReservation.scrollDownLittle();
 
-		makeReservation.clickOnObject();
+		makeReservation.clickSearchReservationResult();
 
 		makeReservation.clickOnFindTableButton2();
 		makeReservation.clickOnNearestTimeButton();
