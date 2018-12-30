@@ -1,5 +1,7 @@
 package test.smoke;
 
+import java.util.Random;
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -15,12 +17,31 @@ public class SmokeTest {
 	private String loginEmailField = "probniemail@gmail.com";
 	private String loginPasswordField = "probniemail";
 	private String searchBarField = "Panera";
-	private String guestsField = "3";
-	private String dayField = "1";
-	private String monthField = "Feb";
+	private Integer guestsField;
+	private Integer dayField;
+	private String monthField;
 	private String yearField = "2019";
 	private String timeField1 = "2";
 	private String timeField2 = "00";
+
+	public void generateRandomNumberOfGuests() {
+
+		Random random = new Random();
+		guestsField = random.nextInt(7);
+	}
+
+	public void generateRandomDay() {
+
+		Random random = new Random();
+		dayField = random.nextInt(29);
+	}
+
+	public void generateRandomMonth() {
+		String[] months = { "Jan", "Feb", "Mar", "Apr" };
+		Random random = new Random();
+		int index = random.nextInt(4);
+		monthField = months[index];
+	}
 
 	@BeforeTest
 	public void setupEnviromnent() {
@@ -37,12 +58,18 @@ public class SmokeTest {
 		makeReservation.setLoginEmailField(loginEmailField);
 		makeReservation.setLoginPasswordField(loginPasswordField);
 		makeReservation.clickOnLoginButton();
-
 		makeReservation.setSearchBarField(searchBarField);
-		makeReservation.setGuestsField(guestsField);
-		makeReservation.setDay(dayField);
+
+		generateRandomNumberOfGuests();
+		makeReservation.setGuestsField(guestsField.toString());
+
+		generateRandomDay();
+		makeReservation.setDay(dayField.toString());
+
+		generateRandomMonth();
 		makeReservation.setMonth(monthField);
 		makeReservation.setYear(yearField);
+
 		makeReservation.setTime1(timeField1);
 		makeReservation.setTime2(timeField2);
 		makeReservation.clickOnFindTableButton();

@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Random;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -207,6 +209,7 @@ public class MakeFreeReservation {
 	}
 
 	public void setGuestsField(String string) throws InterruptedException {
+		Thread.sleep(500);
 		guestsField.sendKeys(string);
 		guestsField.sendKeys(Keys.TAB);
 	}
@@ -218,7 +221,7 @@ public class MakeFreeReservation {
 	}
 
 	public void clickSearchReservationResult() throws InterruptedException {
-//		Thread.sleep(1000);
+		Thread.sleep(1000);
 		searchReservationResultElement.click();
 
 	}
@@ -323,13 +326,15 @@ public class MakeFreeReservation {
 	}
 
 	public void setDay(String dayField1) throws InterruptedException {
+		Thread.sleep(500);
 		dayField.sendKeys(dayField1);
-		dayField.sendKeys(Keys.TAB);
 
 	}
 
-	public void setMonth(String monthField2) {
+	public void setMonth(String monthField2) throws InterruptedException {
+		Thread.sleep(1000);
 		monthField.sendKeys(monthField2);
+		Thread.sleep(1000);
 		monthField.sendKeys(Keys.ARROW_RIGHT);
 
 	}
@@ -509,6 +514,14 @@ public class MakeFreeReservation {
 	public String getCompletedReservationClass() {
 		String title = completedReservation.getAttribute("class");
 		return title;
+	}
+
+	public static void main(String[] args) {
+		Random random = new Random();
+		for (int i = 1; i < 500; i++) {
+			System.out.println(random.nextInt(5));
+		}
+
 	}
 
 }
