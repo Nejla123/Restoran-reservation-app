@@ -164,7 +164,7 @@ public class MakeFreeReservation {
 	@FindBy(xpath = "//*[@id=\"Reservation\"]/form/div/div[4]/button")
 	WebElement findTableForFilteredObject;
 
-	@FindBy(xpath = "//*[@id=\"Reservation\"]/div[2]/button[1]")
+	@FindBy(xpath = "//*[@id=\"Reservation\"]/div[2]/button")
 	WebElement nearestTimeForFilteredObject;
 
 	@FindBy(xpath = "/html/body/div[2]/div[4]/div/div[2]/button/h4")
@@ -450,8 +450,10 @@ public class MakeFreeReservation {
 		;
 	}
 
-	public void clickOnFindTableForFilteredObject() {
+	public void clickOnFindTableForFilteredObject() throws InterruptedException {
 		findTableForFilteredObject.click();
+		Thread.sleep(1000);
+
 	}
 
 	public void clickOnNearestTimeForFilteredObject() throws InterruptedException {

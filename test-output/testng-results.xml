@@ -2,14 +2,14 @@
 <testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2018-12-30T20:10:14Z" name="Default suite" finished-at="2018-12-30T20:10:44Z" duration-ms="30653">
+  <suite started-at="2018-12-31T13:54:10Z" name="Default suite" finished-at="2018-12-31T13:55:01Z" duration-ms="50575">
     <groups>
     </groups>
-    <test started-at="2018-12-30T20:10:14Z" name="Default test" finished-at="2018-12-30T20:10:44Z" duration-ms="30653">
-      <class name="test.smoke.SmokeTest">
-        <test-method is-config="true" signature="setupEnviromnent()[pri:0, instance:test.smoke.SmokeTest@477b4cdf]" started-at="2018-12-30T20:10:14Z" name="setupEnviromnent" finished-at="2018-12-30T20:10:21Z" duration-ms="6854" status="PASS">
+    <test started-at="2018-12-31T13:54:10Z" name="Default test" finished-at="2018-12-31T13:55:01Z" duration-ms="50575">
+      <class name="test.regression.BookFromSectionRestaurants">
+        <test-method is-config="true" signature="setupEnviromnent()[pri:0, instance:test.regression.BookFromSectionRestaurants@233795b6]" started-at="2018-12-31T13:54:10Z" name="setupEnviromnent" finished-at="2018-12-31T13:54:19Z" duration-ms="9510" status="PASS">
         </test-method>
-        <test-method signature="testMakeFreeReservation()[pri:0, instance:test.smoke.SmokeTest@477b4cdf]" started-at="2018-12-30T20:10:21Z" name="testMakeFreeReservation" finished-at="2018-12-30T20:10:44Z" duration-ms="23752" status="PASS">
+        <test-method signature="testBookFromSectionRestaurants()[pri:1, instance:test.regression.BookFromSectionRestaurants@233795b6]" started-at="2018-12-31T13:54:19Z" name="testBookFromSectionRestaurants" finished-at="2018-12-31T13:55:01Z" duration-ms="41040" status="PASS">
         </test-method>
       </class>
     </test>
