@@ -454,8 +454,10 @@ public class MakeFreeReservation {
 		findTableForFilteredObject.click();
 	}
 
-	public void clickOnNearestTimeForFilteredObject() {
+	public void clickOnNearestTimeForFilteredObject() throws InterruptedException {
 		nearestTimeForFilteredObject.click();
+		Thread.sleep(1000);
+
 	}
 
 	public void scrollDownPopularLocation() throws InterruptedException {
