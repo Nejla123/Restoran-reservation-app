@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="test.regression.MakeReservationFromPopularLocations"/>
+      <class name="test.regression.CreateAccountFillFields"/>
+      <class name="test.regression.CreateAccountInvalidInput"/>
+      <class name="test.regression.NonExistentRestaurant"/>
+      <class name="test.regression.BookFromSectionRestaurants"/>
+      <class name="test.regression.MakeReservationInvalidData"/>
+      <class name="test.regression.LoginInvalidInput"/>
+      <class name="test.regression.MakeReservationNoInputData"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
