@@ -72,7 +72,7 @@ public class BookFromSectionRestaurants {
 		menu.clickOnAboutButton();
 
 		String aboutHeaderClass = menu.getAboutHeaderClass();
-		// Assert.assertEquals(aboutHeaderClass, "restaurant-h5 ng-binding");
+		Assert.assertEquals(aboutHeaderClass, "restaurant-h5 ng-binding");
 
 		String aboutDescriptionClass = menu.getAboutDescriptionClass();
 		Assert.assertEquals(aboutDescriptionClass, "desc restaurant-h6");
