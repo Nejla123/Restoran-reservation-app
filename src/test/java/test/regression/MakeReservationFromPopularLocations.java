@@ -1,5 +1,7 @@
 package test.regression;
 
+import java.util.Random;
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -13,12 +15,31 @@ public class MakeReservationFromPopularLocations {
 	private String baseURL = "https://ridvansrestaurantclient.herokuapp.com/";
 	private String loginEmailField = "probniemail@gmail.com";
 	private String loginPasswordField = "probniemail";
-	private String guestsForFilteredObject = "2";
-	private String dayForFilteredObject = "28";
-	private String monthForFilteredObject = "Dec";
-	private String yearForFilteredObject = "2018";
+	private Integer guestsForFilteredObject;
+	private Integer dayForFilteredObject;
+	private String monthForFilteredObject;
+	private String yearForFilteredObject = "2019";
 	private String time1FieldForFilteringObject = "02";
 	private String time2FieldForFilteringObject = "00";
+
+	public void generateRandomNumberOfGuests() {
+
+		Random random = new Random();
+		guestsForFilteredObject = random.nextInt(7);
+	}
+
+	public void generateRandomDay() {
+
+		Random random = new Random();
+		dayForFilteredObject = random.nextInt(29);
+	}
+
+	public void generateRandomMonth() {
+		String[] months = { "Jan", "Feb", "Mar", "Apr" };
+		Random random = new Random();
+		int index = random.nextInt(4);
+		monthForFilteredObject = months[index];
+	}
 
 	@BeforeTest
 	public void setupEnviromnent() {
@@ -42,8 +63,11 @@ public class MakeReservationFromPopularLocations {
 
 		makeReservation.clickOnPopularLocationCity();
 		makeReservation.clickOnPopularLocationRestaurant();
-		makeReservation.setGuestesForFilteredObject(guestsForFilteredObject);
-		makeReservation.setDayForFilteredObject(dayForFilteredObject);
+		generateRandomNumberOfGuests();
+		makeReservation.setGuestesForFilteredObject(guestsForFilteredObject.toString());
+		generateRandomDay();
+		makeReservation.setDayForFilteredObject(dayForFilteredObject.toString());
+		generateRandomMonth();
 		makeReservation.setMonthForFilteredObject(monthForFilteredObject);
 		makeReservation.setYearForFilteredObject(yearForFilteredObject);
 		makeReservation.setTime1FieldForFilteringObject(time1FieldForFilteringObject);

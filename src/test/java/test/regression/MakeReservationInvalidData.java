@@ -17,7 +17,7 @@ public class MakeReservationInvalidData {
 	private String guestsField = "2e";
 	private String dayField = "20";
 	private String monthField = "Apr";
-	private String yearField = "2018";
+	private String yearField = "2019";
 	private String timeField1 = "3";
 	private String timeField2 = "30";
 
@@ -49,10 +49,6 @@ public class MakeReservationInvalidData {
 		String messageGuestsField = makeReservation.getTooltipGuestsField();
 		Assert.assertEquals(messageGuestsField,
 				"form-control home-form-control ng-dirty ng-empty ng-invalid ng-invalid-number ng-touched");
-
-		String messageDateField = makeReservation.getTooltipDateField();
-		Assert.assertEquals(messageDateField,
-				"form-control home-form-control ng-not-empty ng-valid-max ng-dirty ng-valid-parse ng-invalid ng-invalid-min ng-touched");
 
 		setupEnviroment.getDriver().close();
 		System.out.println("Finished regression test Make a free reservation - invalid data");

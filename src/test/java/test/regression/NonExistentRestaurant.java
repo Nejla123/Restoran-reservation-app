@@ -15,8 +15,8 @@ public class NonExistentRestaurant {
 	private String searchBarField = "Mlinada";
 	private String guestsField = "3";
 	private String dayField = "30";
-	private String monthField = "Dec";
-	private String yearField = "2018";
+	private String monthField = "Mar";
+	private String yearField = "2019";
 	private String timeField1 = "2";
 	private String timeField2 = "00";
 

@@ -110,7 +110,7 @@ public class MakeFreeReservation {
 	@FindBy(xpath = "/html/body/div[2]/div[1]/div[1]/form/div[2]/div/ul/li[1]/ul/li[1]/ul/li[2]/span/span/i[5]")
 	WebElement price;
 
-	@FindBy(xpath = "/html/body/div[2]/div[1]/div[1]/form/div[2]/div/ul/li[1]/ul/li[2]/ul/li[2]/span/span/i[5]")
+	@FindBy(xpath = "/html/body/div[2]/div[1]/div[1]/form/div[2]/div/ul/li[2]/ul/li[2]/ul/li[2]/span")
 	WebElement rate;
 
 	@FindBy(xpath = "//*[@id=\"categorymultipleleft\"]/option[2]")
@@ -396,8 +396,8 @@ public class MakeFreeReservation {
 		dayForFilteredObject.sendKeys(dayForFilteredObject2);
 		Thread.sleep(1000);
 
-		dayForFilteredObject.sendKeys(Keys.ARROW_RIGHT);
-		Thread.sleep(1000);
+//		dayForFilteredObject.sendKeys(Keys.ARROW_RIGHT);
+//		Thread.sleep(1000);
 
 	}
 
