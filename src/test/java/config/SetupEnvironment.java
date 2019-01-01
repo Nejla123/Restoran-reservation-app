@@ -12,7 +12,8 @@ public class SetupEnvironment {
 	private String driverPath = "C:\\Users\\Nejla\\Downloads\\chromedriver_win32\\chromedriver.exe";
 
 	public SetupEnvironment() {
-		System.setProperty(driverName, driverPath);
+//		System.setProperty(driverName, driverPath);
+		System.setProperty("webdriver.chrome.driver","/home/haris/spring test/eclipse-workspace/maven/Restoran-reservation-app/chromedriver/chromedriver");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
