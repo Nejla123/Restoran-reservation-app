@@ -5,6 +5,8 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class SetupEnvironment {
 
 	private WebDriver driver;
@@ -13,7 +15,8 @@ public class SetupEnvironment {
 
 	public SetupEnvironment() {
 //		System.setProperty(driverName, driverPath);
-		System.setProperty("webdriver.chrome.driver","chromedriver/chromedriver");
+//		System.setProperty("webdriver.chrome.driver","chromedriver/chromedriver");
+		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
