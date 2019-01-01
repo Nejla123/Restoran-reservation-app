@@ -1,6 +1,8 @@
 package test.regression;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -19,6 +21,16 @@ public class NonExistentRestaurant {
 	private String yearField = "2019";
 	private String timeField1 = "2";
 	private String timeField2 = "00";
+
+	@BeforeClass
+	private void startClass() {
+		System.out.println("Starting test class " + this.getClass().getCanonicalName());
+	}
+
+	@AfterClass
+	private void finishedClass() {
+		System.out.println("Finished test class " + this.getClass().getCanonicalName());
+	}
 
 	private String baseURL = "https://ridvansrestaurantclient.herokuapp.com/";
 

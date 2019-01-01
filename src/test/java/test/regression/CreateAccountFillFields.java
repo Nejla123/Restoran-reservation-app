@@ -3,6 +3,8 @@ package test.regression;
 import java.util.Random;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -35,6 +37,16 @@ public class CreateAccountFillFields {
 		}
 		email = randomEmailPrefix + emailSufix;
 
+	}
+
+	@BeforeClass
+	private void startClass() {
+		System.out.println("Starting test class " + this.getClass().getCanonicalName());
+	}
+
+	@AfterClass
+	private void finishedClass() {
+		System.out.println("Finished test class " + this.getClass().getCanonicalName());
 	}
 
 	@BeforeTest

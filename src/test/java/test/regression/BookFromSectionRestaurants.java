@@ -3,6 +3,8 @@ package test.regression;
 import java.util.Random;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -48,6 +50,16 @@ public class BookFromSectionRestaurants {
 		System.out.println("Generated random month:" + monthForFilteredObject);
 	}
 
+	@BeforeClass
+	private void startClass() {
+		System.out.println("Starting test class " + this.getClass().getCanonicalName());
+	}
+
+	@AfterClass
+	private void finishedClass() {
+		System.out.println("Finished test class " + this.getClass().getCanonicalName());
+	}
+
 	@BeforeTest
 	public void setupEnviromnent() {
 
@@ -59,6 +71,9 @@ public class BookFromSectionRestaurants {
 
 	@Test(priority = 1)
 	public void testBookFromSectionRestaurants() throws InterruptedException {
+
+		System.out.println("started method" + this.getClass().getSimpleName());
+
 		setupEnviroment.getDriver().get(baseURL);
 
 		makeReservation.clickOnLoginLink();
@@ -117,7 +132,7 @@ public class BookFromSectionRestaurants {
 
 		setupEnviroment.getDriver().close();
 
-		System.out.println("Finished regressiontest Book a restaurant from the section Restaurants");
+		System.out.println("Finished method" + this.getClass().getSimpleName());
 
 	}
 
