@@ -58,6 +58,7 @@ public class BookFromSectionRestaurants {
 	@AfterClass
 	private void finishedClass() {
 		System.out.println("Finished test class " + this.getClass().getCanonicalName());
+		System.out.println();
 	}
 
 	@BeforeTest
@@ -72,7 +73,7 @@ public class BookFromSectionRestaurants {
 	@Test(priority = 1)
 	public void testBookFromSectionRestaurants() throws InterruptedException {
 
-		System.out.println("started method" + this.getClass().getSimpleName());
+		System.out.println("Started method" + this.getClass().getSimpleName());
 
 		setupEnviroment.getDriver().get(baseURL);
 

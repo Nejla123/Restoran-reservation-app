@@ -431,6 +431,15 @@ public class MakeFreeReservation {
 		Thread.sleep(1000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0,0);");
+		Thread.sleep(1000);
+
+	}
+
+	public void scrollToBottom() throws InterruptedException {
+		Thread.sleep(1000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0,3000);");
+		Thread.sleep(1000);
 
 	}
 
@@ -462,12 +471,13 @@ public class MakeFreeReservation {
 
 	}
 
-	public void scrollDownPopularLocation() throws InterruptedException {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,2000)");
-		Thread.sleep(1000);
-
-	}
+//	public void scrollDownPopularLocation() throws InterruptedException {
+//		Thread.sleep(1000);
+//		JavascriptExecutor js = (JavascriptExecutor) driver;
+//		js.executeScript("window.scrollBy(0,2000)");
+//		Thread.sleep(1000);
+//
+//	}
 
 	public void clickOnPopularLocationCity() {
 		popularLocationCity.click();

@@ -25,6 +25,7 @@ public class LoginInvalidInput {
 	@AfterClass
 	private void finishedClass() {
 		System.out.println("Finished test class " + this.getClass().getCanonicalName());
+		System.out.println();
 	}
 
 	@BeforeTest
@@ -36,6 +37,7 @@ public class LoginInvalidInput {
 
 	@Test(priority = 1)
 	public void testLoginInvalidInput() {
+		System.out.println("Started method" + this.getClass().getSimpleName());
 		setupEnviroment.getDriver().get(baseURL);
 		login.clickOnLoginLink();
 
@@ -45,7 +47,7 @@ public class LoginInvalidInput {
 		String messageForInvalidEmail = login.getLoginClass();
 		Assert.assertEquals(messageForInvalidEmail, "help-block");
 		setupEnviroment.getDriver().close();
-		System.out.println("Finished regression test Login form - invalid inputs");
+		System.out.println("Finished method" + this.getClass().getSimpleName());
 
 	}
 }

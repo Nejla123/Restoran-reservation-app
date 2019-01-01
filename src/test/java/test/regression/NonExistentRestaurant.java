@@ -30,6 +30,7 @@ public class NonExistentRestaurant {
 	@AfterClass
 	private void finishedClass() {
 		System.out.println("Finished test class " + this.getClass().getCanonicalName());
+		System.out.println();
 	}
 
 	private String baseURL = "https://ridvansrestaurantclient.herokuapp.com/";
@@ -42,6 +43,7 @@ public class NonExistentRestaurant {
 
 	@Test(priority = 1)
 	public void testNonExistentRestaurant() throws InterruptedException {
+		System.out.println("Started method" + this.getClass().getSimpleName());
 		setupEnviroment.getDriver().get(baseURL);
 		makeReservation.clickOnLoginLink();
 
@@ -62,7 +64,7 @@ public class NonExistentRestaurant {
 		Assert.assertEquals(messageForNonExistentRestaurant, "no-results");
 
 		setupEnviroment.getDriver().close();
-		System.out.println("Finished regression test Check search bar with non-existent restaurant in the database");
+		System.out.println("Finished method" + this.getClass().getSimpleName());
 
 	}
 

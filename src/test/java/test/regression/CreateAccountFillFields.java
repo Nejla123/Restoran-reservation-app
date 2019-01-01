@@ -47,6 +47,7 @@ public class CreateAccountFillFields {
 	@AfterClass
 	private void finishedClass() {
 		System.out.println("Finished test class " + this.getClass().getCanonicalName());
+		System.out.println();
 	}
 
 	@BeforeTest
@@ -58,7 +59,7 @@ public class CreateAccountFillFields {
 
 	@Test(priority = 1)
 	public void testCreateAccountFillField() {
-
+		System.out.println("Started method" + this.getClass().getSimpleName());
 		setupEnviroment.getDriver().get(baseURL);
 
 		createAccount.clickOnLoginLink();
@@ -78,7 +79,7 @@ public class CreateAccountFillFields {
 		Assert.assertEquals(title, "login-h3");
 
 		setupEnviroment.getDriver().close();
-		System.out.println("Finished regression test Create an account - fill all fields");
+		System.out.println("Finished method" + this.getClass().getSimpleName());
 
 	}
 

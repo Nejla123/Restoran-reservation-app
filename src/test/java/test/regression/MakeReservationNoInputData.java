@@ -24,6 +24,7 @@ public class MakeReservationNoInputData {
 	@AfterClass
 	private void finishedClass() {
 		System.out.println("Finished test class " + this.getClass().getCanonicalName());
+		System.out.println();
 	}
 
 	@BeforeTest
@@ -35,6 +36,7 @@ public class MakeReservationNoInputData {
 
 	@Test(priority = 1)
 	public void testMakeReservationNoInputData() throws InterruptedException {
+		System.out.println("Started method" + this.getClass().getSimpleName());
 		setupEnviroment.getDriver().get(baseURL);
 		makeReservation.clickOnLoginLink();
 		makeReservation.setLoginEmailField(loginEmailField);
@@ -47,7 +49,7 @@ public class MakeReservationNoInputData {
 				"form-control home-form-control ng-pristine ng-untouched ng-empty ng-valid-min ng-valid-max ng-invalid ng-invalid-required");
 
 		setupEnviroment.getDriver().close();
-		System.out.println("Finished regression test Make a free reservation - no input data");
+		System.out.println("Finished method" + this.getClass().getSimpleName());
 
 	}
 

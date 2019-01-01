@@ -31,6 +31,7 @@ public class MakeReservationInvalidData {
 	@AfterClass
 	private void finishedClass() {
 		System.out.println("Finished test class " + this.getClass().getCanonicalName());
+		System.out.println();
 	}
 
 	@BeforeTest
@@ -42,7 +43,7 @@ public class MakeReservationInvalidData {
 
 	@Test(priority = 1)
 	public void testMakeReservationInvalidData() throws InterruptedException {
-
+		System.out.println("Started method" + this.getClass().getSimpleName());
 		setupEnviroment.getDriver().get(baseURL);
 		makeReservation.clickOnLoginLink();
 		makeReservation.setLoginEmailField(loginEmailField);
@@ -63,7 +64,7 @@ public class MakeReservationInvalidData {
 				"form-control home-form-control ng-dirty ng-empty ng-invalid ng-invalid-number ng-touched");
 
 		setupEnviroment.getDriver().close();
-		System.out.println("Finished regression test Make a free reservation - invalid data");
+		System.out.println("Finished method" + this.getClass().getSimpleName());
 
 	}
 

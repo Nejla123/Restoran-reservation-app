@@ -3,9 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)" preserve-order="true">
     <classes>
-      <class name="adminPanel.AddRestaurant">
+      <class name="test.regression.MakeReservationFromPopularLocations">
         <methods>
-          <include name="testAddRestaurant"/>
+          <include name="finishedClass"/>
+          <include name="testMakeReservationFromPopularLocations"/>
+          <include name="startClass"/>
           <include name="setupEnviromnent"/>
         </methods>
       </class>

@@ -28,12 +28,14 @@ public class MakeReservationFromPopularLocations {
 
 		Random random = new Random();
 		guestsForFilteredObject = random.nextInt(7);
+		System.out.println("Generated random number of guests:" + guestsForFilteredObject);
 	}
 
 	public void generateRandomDay() {
 
 		Random random = new Random();
 		dayForFilteredObject = random.nextInt(29);
+		System.out.println("Generated random day:" + dayForFilteredObject);
 	}
 
 	public void generateRandomMonth() {
@@ -41,6 +43,7 @@ public class MakeReservationFromPopularLocations {
 		Random random = new Random();
 		int index = random.nextInt(4);
 		monthForFilteredObject = months[index];
+		System.out.println("Generated random month:" + monthForFilteredObject);
 	}
 
 	@BeforeClass
@@ -51,6 +54,7 @@ public class MakeReservationFromPopularLocations {
 	@AfterClass
 	private void finishedClass() {
 		System.out.println("Finished test class " + this.getClass().getCanonicalName());
+		System.out.println();
 	}
 
 	@BeforeTest
@@ -61,6 +65,9 @@ public class MakeReservationFromPopularLocations {
 
 	@Test(priority = 1)
 	public void testMakeReservationFromPopularLocations() throws InterruptedException {
+
+		System.out.println("Started method" + this.getClass().getSimpleName());
+
 		setupEnviroment.getDriver().get(baseURL);
 		makeReservation.clickOnLoginLink();
 
@@ -68,7 +75,7 @@ public class MakeReservationFromPopularLocations {
 		makeReservation.setLoginPasswordField(loginPasswordField);
 		makeReservation.clickOnLoginButton();
 		makeReservation.clickOnHomeLink();
-		makeReservation.scrollDownPopularLocation();
+		makeReservation.scrollToBottom();
 
 		String titlePopularLocations = makeReservation.getSectionClass();
 		Assert.assertEquals(titlePopularLocations, "text-center container-h3");
@@ -94,7 +101,7 @@ public class MakeReservationFromPopularLocations {
 		Assert.assertEquals(message1, "row-reservation btn-block ng-scope");
 
 		setupEnviroment.getDriver().close();
-		System.out.println("Finished regression test Make Reservation from popular locations section");
+		System.out.println("Finished method" + this.getClass().getSimpleName());
 
 	}
 }

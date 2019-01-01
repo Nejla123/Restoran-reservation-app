@@ -34,11 +34,12 @@ public class CreateAccountInvalidInput {
 		@AfterClass
 		private void finishedClass() {
 			System.out.println("Finished test class " + this.getClass().getCanonicalName());
+			System.out.println();
 		}
 
 		@Test(priority = 1)
 		public void testCreateAccountInvalidInput() {
-
+			System.out.println("Started method" + this.getClass().getSimpleName());
 			setupEnviroment.getDriver().get(baseURL);
 
 			createAccount.clickOnLoginLink();
@@ -59,7 +60,7 @@ public class CreateAccountInvalidInput {
 			Assert.assertEquals(highlighedPhoneNumberField, "form-group formg");
 
 			setupEnviroment.getDriver().close();
-			System.out.println("Finished regression test Create an account - invalid inputs");
+			System.out.println("Finished method" + this.getClass().getSimpleName());
 
 		}
 	}
