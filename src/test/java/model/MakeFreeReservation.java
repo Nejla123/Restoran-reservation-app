@@ -436,10 +436,10 @@ public class MakeFreeReservation {
 	}
 
 	public void scrollToBottom() throws InterruptedException {
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0,3000);");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 
 	}
 

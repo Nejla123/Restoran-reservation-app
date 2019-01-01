@@ -1,16 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-  <test thread-count="5" name="Test">
-    <classes>
-      <class name="test.regression.MakeReservationFromPopularLocations"/>
-      <class name="test.regression.CreateAccountFillFields"/>
-      <class name="test.regression.CreateAccountInvalidInput"/>
-      <class name="test.regression.NonExistentRestaurant"/>
-      <class name="test.regression.BookFromSectionRestaurants"/>
-      <class name="test.regression.MakeReservationInvalidData"/>
-      <class name="test.regression.LoginInvalidInput"/>
-      <class name="test.regression.MakeReservationNoInputData"/>
-    </classes>
-  </test> <!-- Test -->
+	<!-- <test thread-count="5" name="Test"> -->
+	<!-- <packages> -->
+	<!-- <package name="test.regression"/> -->
+	<!-- </packages> -->
+
+	<test thread-count="5" name="Test1">
+		<classes>
+			<class
+				name="test.regression.MakeReservationFromPopularLocations" />
+		</classes>
+	</test>
+	<test thread-count="5" name="Test2">
+		<classes>
+
+			<class name="test.regression.CreateAccountFillFields" />
+		</classes>
+	</test>
+
+	<test thread-count="5" name="Test3">
+		<classes>
+			<class name="test.regression.CreateAccountInvalidInput" />
+		</classes>
+	</test>
+	<test thread-count="5" name="Test4">
+		<classes>
+
+			<class name="test.regression.NonExistentRestaurant" />
+		</classes>
+	</test>
+
+
+	<test thread-count="5" name="Test5">
+		<classes>
+			<class name="test.regression.BookFromSectionRestaurants" />
+		</classes>
+	</test>
+	<test thread-count="5" name="Test6">
+		<classes>
+
+			<class name="test.regression.MakeReservationInvalidData" />
+		</classes>
+	</test>
+
+	<test thread-count="5" name="Test7">
+		<classes>
+			<class name="test.regression.LoginInvalidInput" />
+		</classes>
+	</test>
+	<test thread-count="5" name="Test8">
+		<classes>
+
+			<class name="test.regression.MakeReservationNoInputData" />
+		</classes>
+	</test>
 </suite> <!-- Suite -->
