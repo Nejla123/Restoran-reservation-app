@@ -3,6 +3,8 @@ package test.smoke;
 import java.util.Random;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -28,12 +30,16 @@ public class SmokeTest {
 
 		Random random = new Random();
 		guestsField = random.nextInt(7);
+		guestsField = (guestsField + 1) % 8;
+		System.out.println("Generated random number of guests:" + guestsField);
 	}
 
 	public void generateRandomDay() {
 
 		Random random = new Random();
-		dayField = random.nextInt(29);
+		dayField = random.nextInt(28);
+		dayField = (dayField + 1) % 29;
+		System.out.println("Generated random day:" + dayField);
 	}
 
 	public void generateRandomMonth() {
@@ -41,6 +47,18 @@ public class SmokeTest {
 		Random random = new Random();
 		int index = random.nextInt(4);
 		monthField = months[index];
+		System.out.println("Generated random month:" + monthField);
+	}
+
+	@BeforeClass
+	private void startClass() {
+		System.out.println("Starting test class " + this.getClass().getCanonicalName());
+	}
+
+	@AfterClass
+	private void finishedClass() {
+		System.out.println("Finished test class " + this.getClass().getCanonicalName());
+		System.out.println();
 	}
 
 	@BeforeTest
@@ -52,6 +70,8 @@ public class SmokeTest {
 
 	@Test
 	public void testMakeFreeReservation() throws InterruptedException {
+
+		System.out.println("Started method " + this.getClass().getSimpleName());
 		setupEnviroment.getDriver().get(baseURL);
 		makeReservation.clickOnLoginLink();
 
@@ -86,5 +106,7 @@ public class SmokeTest {
 		String title = makeReservation.getCompletedReservationClass();
 		Assert.assertEquals(title, "col-xs-4 col-info ng-binding");
 		setupEnviroment.getDriver().close();
+
+		System.out.println("Finished method " + this.getClass().getSimpleName());
 	}
 }
