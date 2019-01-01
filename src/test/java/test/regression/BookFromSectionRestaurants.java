@@ -30,12 +30,14 @@ public class BookFromSectionRestaurants {
 
 		Random random = new Random();
 		guestsForFilteredObject = random.nextInt(7);
+		System.out.println("Generated random number of guests:" + guestsForFilteredObject);
 	}
 
 	public void generateRandomDay() {
 
 		Random random = new Random();
 		dayForFilteredObject = random.nextInt(29);
+		System.out.println("Generated random day:" + dayForFilteredObject);
 	}
 
 	public void generateRandomMonth() {
@@ -43,6 +45,7 @@ public class BookFromSectionRestaurants {
 		Random random = new Random();
 		int index = random.nextInt(4);
 		monthForFilteredObject = months[index];
+		System.out.println("Generated random month:" + monthForFilteredObject);
 	}
 
 	@BeforeTest
@@ -93,6 +96,7 @@ public class BookFromSectionRestaurants {
 
 		makeReservation.scrollToTop();
 		generateRandomNumberOfGuests();
+
 		makeReservation.setGuestesForFilteredObject(guestsForFilteredObject.toString());
 		generateRandomDay();
 		makeReservation.setDayForFilteredObject(dayForFilteredObject.toString());
