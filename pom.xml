@@ -27,7 +27,7 @@
 				<configuration>
 					<!-- Suite testng xml file to consider for test execution -->
 					<suiteXmlFiles>
-						<suiteXmlFile>testngsmoke.xml</suiteXmlFile>
+						<suiteXmlFile>testngSuites.xml</suiteXmlFile>
 <!-- 						<suiteXmlFile>suites-test-testng.xml</suiteXmlFile> -->
 					</suiteXmlFiles>
 				</configuration>
