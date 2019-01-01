@@ -43,7 +43,7 @@ public class MakeReservationInvalidData {
 
 	@Test(priority = 1)
 	public void testMakeReservationInvalidData() throws InterruptedException {
-		System.out.println("Started method" + this.getClass().getSimpleName());
+		System.out.println("Started method " + this.getClass().getSimpleName());
 		setupEnviroment.getDriver().get(baseURL);
 		makeReservation.clickOnLoginLink();
 		makeReservation.setLoginEmailField(loginEmailField);
@@ -64,7 +64,7 @@ public class MakeReservationInvalidData {
 				"form-control home-form-control ng-dirty ng-empty ng-invalid ng-invalid-number ng-touched");
 
 		setupEnviroment.getDriver().close();
-		System.out.println("Finished method" + this.getClass().getSimpleName());
+		System.out.println("Finished method " + this.getClass().getSimpleName());
 
 	}
 

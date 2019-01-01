@@ -43,7 +43,7 @@ public class NonExistentRestaurant {
 
 	@Test(priority = 1)
 	public void testNonExistentRestaurant() throws InterruptedException {
-		System.out.println("Started method" + this.getClass().getSimpleName());
+		System.out.println("Started method " + this.getClass().getSimpleName());
 		setupEnviroment.getDriver().get(baseURL);
 		makeReservation.clickOnLoginLink();
 
@@ -64,7 +64,7 @@ public class NonExistentRestaurant {
 		Assert.assertEquals(messageForNonExistentRestaurant, "no-results");
 
 		setupEnviroment.getDriver().close();
-		System.out.println("Finished method" + this.getClass().getSimpleName());
+		System.out.println("Finished method " + this.getClass().getSimpleName());
 
 	}
 

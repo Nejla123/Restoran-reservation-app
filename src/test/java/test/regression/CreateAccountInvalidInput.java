@@ -39,7 +39,7 @@ public class CreateAccountInvalidInput {
 
 		@Test(priority = 1)
 		public void testCreateAccountInvalidInput() {
-			System.out.println("Started method" + this.getClass().getSimpleName());
+			System.out.println("Started method " + this.getClass().getSimpleName());
 			setupEnviroment.getDriver().get(baseURL);
 
 			createAccount.clickOnLoginLink();
@@ -60,7 +60,7 @@ public class CreateAccountInvalidInput {
 			Assert.assertEquals(highlighedPhoneNumberField, "form-group formg");
 
 			setupEnviroment.getDriver().close();
-			System.out.println("Finished method" + this.getClass().getSimpleName());
+			System.out.println("Finished method " + this.getClass().getSimpleName());
 
 		}
 	}

@@ -59,7 +59,7 @@ public class CreateAccountFillFields {
 
 	@Test(priority = 1)
 	public void testCreateAccountFillField() {
-		System.out.println("Started method" + this.getClass().getSimpleName());
+		System.out.println("Started method " + this.getClass().getSimpleName());
 		setupEnviroment.getDriver().get(baseURL);
 
 		createAccount.clickOnLoginLink();
@@ -79,7 +79,7 @@ public class CreateAccountFillFields {
 		Assert.assertEquals(title, "login-h3");
 
 		setupEnviroment.getDriver().close();
-		System.out.println("Finished method" + this.getClass().getSimpleName());
+		System.out.println("Finished method " + this.getClass().getSimpleName());
 
 	}
 

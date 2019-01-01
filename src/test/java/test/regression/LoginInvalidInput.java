@@ -37,7 +37,7 @@ public class LoginInvalidInput {
 
 	@Test(priority = 1)
 	public void testLoginInvalidInput() {
-		System.out.println("Started method" + this.getClass().getSimpleName());
+		System.out.println("Started method " + this.getClass().getSimpleName());
 		setupEnviroment.getDriver().get(baseURL);
 		login.clickOnLoginLink();
 
@@ -47,7 +47,7 @@ public class LoginInvalidInput {
 		String messageForInvalidEmail = login.getLoginClass();
 		Assert.assertEquals(messageForInvalidEmail, "help-block");
 		setupEnviroment.getDriver().close();
-		System.out.println("Finished method" + this.getClass().getSimpleName());
+		System.out.println("Finished method " + this.getClass().getSimpleName());
 
 	}
 }
