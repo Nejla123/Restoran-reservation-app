@@ -32,13 +32,15 @@ public class BookFromSectionRestaurants {
 
 		Random random = new Random();
 		guestsForFilteredObject = random.nextInt(7);
+		guestsForFilteredObject = (guestsForFilteredObject + 1) % 8;
 		System.out.println("Generated random number of guests:" + guestsForFilteredObject);
 	}
 
 	public void generateRandomDay() {
 
 		Random random = new Random();
-		dayForFilteredObject = random.nextInt(29);
+		dayForFilteredObject = random.nextInt(28);
+		dayForFilteredObject = (dayForFilteredObject + 1) % 29;
 		System.out.println("Generated random day:" + dayForFilteredObject);
 	}
 
@@ -73,7 +75,7 @@ public class BookFromSectionRestaurants {
 	@Test(priority = 1)
 	public void testBookFromSectionRestaurants() throws InterruptedException {
 
-		System.out.println("Started method" + this.getClass().getSimpleName());
+		System.out.println("Started method " + this.getClass().getSimpleName());
 
 		setupEnviroment.getDriver().get(baseURL);
 
@@ -133,7 +135,17 @@ public class BookFromSectionRestaurants {
 
 		setupEnviroment.getDriver().close();
 
-		System.out.println("Finished method" + this.getClass().getSimpleName());
+		System.out.println("Finished method " + this.getClass().getSimpleName());
+
+	}
+
+	public static void main(String[] args) {
+		for (int i = 0; i < 500; i++) {
+			Random random = new Random();
+			int broj = random.nextInt(7);
+			broj = (broj + 1) % 8;
+			System.out.println(broj);
+		}
 
 	}
 

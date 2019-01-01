@@ -28,13 +28,15 @@ public class MakeReservationFromPopularLocations {
 
 		Random random = new Random();
 		guestsForFilteredObject = random.nextInt(7);
+		guestsForFilteredObject = (guestsForFilteredObject + 1) % 8;
 		System.out.println("Generated random number of guests:" + guestsForFilteredObject);
 	}
 
 	public void generateRandomDay() {
 
 		Random random = new Random();
-		dayForFilteredObject = random.nextInt(29);
+		dayForFilteredObject = random.nextInt(28);
+		dayForFilteredObject = (dayForFilteredObject + 1) % 29;
 		System.out.println("Generated random day:" + dayForFilteredObject);
 	}
 
