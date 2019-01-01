@@ -13,7 +13,7 @@ public class SetupEnvironment {
 
 	public SetupEnvironment() {
 //		System.setProperty(driverName, driverPath);
-		System.setProperty("webdriver.chrome.driver","/home/haris/spring test/eclipse-workspace/maven/Restoran-reservation-app/chromedriver/chromedriver");
+		System.setProperty("webdriver.chrome.driver","chromedriver/chromedriver");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
