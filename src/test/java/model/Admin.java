@@ -1,5 +1,9 @@
 package model;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -159,17 +163,21 @@ public class Admin {
 		return makeReservation;
 	}
 
-	public void UploadLogo() throws InterruptedException {
-		// uploadLogoImage.click();
+	public void uploadLogo() throws InterruptedException, AWTException {
+
+		uploadLogoImage.click();
 		WebElement frame = driver.switchTo().activeElement();
 		frame.sendKeys("C:\\Users\\Nejla\\Desktop\\webapp\\kaminn.png");
+		Thread.sleep(1000);
 
-		// uploadLogoImage.sendKeys(Keys.ESCAPE);
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_ESCAPE);
+		robot.keyRelease(KeyEvent.VK_ESCAPE);
 
 	}
 
-	public void setNameField() {
-		nameField.sendKeys("Mrkva");
+	public void setNameField(String name) {
+		nameField.sendKeys(name);
 	}
 
 	public void clickOnCategory() {
@@ -177,10 +185,16 @@ public class Admin {
 		category.sendKeys(Keys.ARROW_DOWN, Keys.ENTER);
 	}
 
-	public void uploadCoverPhoto() throws InterruptedException {
+	public void uploadCoverPhoto() throws InterruptedException, AWTException {
 		uploadCoverPhoto.click();
 		WebElement frame = driver.switchTo().activeElement();
 		frame.sendKeys("C:\\Users\\Nejla\\Desktop\\webapp\\noentercity.png");
+		Thread.sleep(1000);
+
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_ESCAPE);
+		robot.keyRelease(KeyEvent.VK_ESCAPE);
+
 	}
 
 	public void chooseCountry() {

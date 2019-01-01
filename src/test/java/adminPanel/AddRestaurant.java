@@ -1,5 +1,7 @@
 package adminPanel;
 
+import java.awt.AWTException;
+
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -11,11 +13,11 @@ public class AddRestaurant {
 	private SetupEnvironment setupEnviroment;
 	private MakeFreeReservation makeReservation;
 	private Admin admin;
-
 	//
 	private String baseURL = "https://ridvansrestaurantclient.herokuapp.com/";
 	private String loginEmailField = "ridvan_appa@hotmail.com";
 	private String loginPasswordField = "admin";
+	private String nameField = "Mrkva";
 	private String descriptionField = "Very good.";
 	private String nameFieldForDish1 = "Musaka";
 	private String priceOfDish1 = "10";
@@ -45,7 +47,7 @@ public class AddRestaurant {
 	}
 
 	@Test
-	public void testAddRestaurant() throws InterruptedException {
+	public void testAddRestaurant() throws InterruptedException, AWTException {
 		setupEnviroment.getDriver().get(baseURL);
 
 		makeReservation.clickOnLoginLink();
@@ -57,9 +59,9 @@ public class AddRestaurant {
 		admin.clickOnAddRestaurantButton();
 		// admin.clickOnUploadLogo();
 
-		admin.UploadLogo();
+		admin.uploadLogo();
 
-		admin.setNameField();
+		admin.setNameField(nameField);
 		admin.clickOnCategory();
 
 		admin.uploadCoverPhoto();
