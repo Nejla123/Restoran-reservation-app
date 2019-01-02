@@ -226,7 +226,8 @@ public class MakeFreeReservation {
 
 	public void clickSearchReservationResult() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(searchReservationResultElement));
+//		wait.until(ExpectedConditions.elementToBeClickable(searchReservationResultElement));
+		wait.until(ExpectedConditions.visibilityOfAllElements(searchReservationResultElement));
 		searchReservationResultElement.click();
 
 	}
@@ -481,7 +482,8 @@ public class MakeFreeReservation {
 
 	public void clickOnNearestTimeForFilteredObject() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(nearestTimeForFilteredObject));
+		wait.until(ExpectedConditions.visibilityOfAllElements(nearestTimeForFilteredObject));
+//		wait.until(ExpectedConditions.elementToBeClickable(nearestTimeForFilteredObject));
 		nearestTimeForFilteredObject.click();
 		Thread.sleep(1000);
 
