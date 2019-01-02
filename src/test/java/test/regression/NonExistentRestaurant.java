@@ -44,7 +44,7 @@ public class NonExistentRestaurant {
 	@Test(priority = 1)
 	public void testNonExistentRestaurant() throws InterruptedException {
 		System.out.println("Started method " + this.getClass().getSimpleName());
-		setupEnviroment.getDriver().get(baseURL);
+		setupEnviroment.getDriver().navigate().to(baseURL);
 		makeReservation.clickOnLoginLink();
 
 		makeReservation.setLoginEmailField(loginEmailField);

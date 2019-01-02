@@ -38,7 +38,7 @@ public class LoginInvalidInput {
 	@Test(priority = 1)
 	public void testLoginInvalidInput() {
 		System.out.println("Started method " + this.getClass().getSimpleName());
-		setupEnviroment.getDriver().get(baseURL);
+		setupEnviroment.getDriver().navigate().to(baseURL);
 		login.clickOnLoginLink();
 
 		login.setLoginEmailField(loginEmailField);

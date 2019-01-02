@@ -60,7 +60,7 @@ public class CreateAccountFillFields {
 	@Test(priority = 1)
 	public void testCreateAccountFillField() {
 		System.out.println("Started method " + this.getClass().getSimpleName());
-		setupEnviroment.getDriver().get(baseURL);
+		setupEnviroment.getDriver().navigate().to(baseURL);
 
 		createAccount.clickOnLoginLink();
 		createAccount.clickOnCreateAccountLink();

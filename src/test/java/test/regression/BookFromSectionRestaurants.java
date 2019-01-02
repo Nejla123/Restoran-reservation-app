@@ -77,7 +77,7 @@ public class BookFromSectionRestaurants {
 
 		System.out.println("Started method " + this.getClass().getSimpleName());
 
-		setupEnviroment.getDriver().get(baseURL);
+		setupEnviroment.getDriver().navigate().to(baseURL);
 
 		makeReservation.clickOnLoginLink();
 		makeReservation.setLoginEmailField(loginEmailField);

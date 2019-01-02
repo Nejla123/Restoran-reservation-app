@@ -40,7 +40,7 @@ public class CreateAccountInvalidInput {
 		@Test(priority = 1)
 		public void testCreateAccountInvalidInput() {
 			System.out.println("Started method " + this.getClass().getSimpleName());
-			setupEnviroment.getDriver().get(baseURL);
+			setupEnviroment.getDriver().navigate().to(baseURL);
 
 			createAccount.clickOnLoginLink();
 			createAccount.clickOnCreateAccountLink();
