@@ -1,8 +1,0 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="suites" verbose="1" parallel="methods"
-	thread-count="1" configfailurepolicy="continue">
-	<suite-files>
-		<suite-file path="smoke.xml" />
-		<suite-file path="regression.xml" />
-	</suite-files>
-</suite>

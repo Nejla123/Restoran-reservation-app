@@ -244,6 +244,7 @@ public class MakeFreeReservation {
 	}
 
 	public void scrollDownLittle() throws InterruptedException {
+
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(100,400)");
 		Thread.sleep(1000);
@@ -466,6 +467,7 @@ public class MakeFreeReservation {
 	}
 
 	public void clickOnNearestTimeForFilteredObject() throws InterruptedException {
+		Thread.sleep(2000);
 		nearestTimeForFilteredObject.click();
 		Thread.sleep(1000);
 

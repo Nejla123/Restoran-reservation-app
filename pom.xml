@@ -27,12 +27,8 @@
 				<configuration>
 					<!-- Suite testng xml file to consider for test execution -->
 					<suiteXmlFiles>
-<!-- 						<suiteXmlFile>smoke.xml</suiteXmlFile> -->
-<!-- 						<suiteXmlFile>testngSuites.xml</suiteXmlFile> -->
-						
-						<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
-						
-						<!-- <suiteXmlFile>suites-test-testng.xml</suiteXmlFile> -->
+						<suiteXmlFile>smoke.xml</suiteXmlFile>
+						<suiteXmlFile>regression.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>

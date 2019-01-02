@@ -10,8 +10,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class SetupEnvironment {
 
 	private WebDriver driver;
-	private String driverName = "webdriver.chrome.driver";
-	private String driverPath = "C:\\Users\\Nejla\\Downloads\\chromedriver_win32\\chromedriver.exe";
+//	private String driverName = "webdriver.chrome.driver";
+//	private String driverPath = "C:\\Users\\Nejla\\Downloads\\chromedriver_win32\\chromedriver.exe";
 
 	public SetupEnvironment() {
 //		System.setProperty(driverName, driverPath);
