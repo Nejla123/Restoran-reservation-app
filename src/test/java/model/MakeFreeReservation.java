@@ -217,6 +217,8 @@ public class MakeFreeReservation {
 	}
 
 	public void clickOnFindTableButton() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(findTableButton));
 		findTableButton.click();
 		Thread.sleep(1000);
 
@@ -230,11 +232,15 @@ public class MakeFreeReservation {
 	}
 
 	public void clickOnFindTableButton2() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(findTableButton2));
 		findTableButton2.click();
 
 	}
 
 	public void clickOnNearestTimeButton() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(nearestTimeButton));
 		nearestTimeButton.click();
 
 	}
@@ -255,6 +261,8 @@ public class MakeFreeReservation {
 	}
 
 	public void clickOnLoginLink() {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(loginLink));
 		loginLink.click();
 	}
 
@@ -472,7 +480,8 @@ public class MakeFreeReservation {
 	}
 
 	public void clickOnNearestTimeForFilteredObject() throws InterruptedException {
-		Thread.sleep(2000);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(nearestTimeForFilteredObject));
 		nearestTimeForFilteredObject.click();
 		Thread.sleep(1000);
 
