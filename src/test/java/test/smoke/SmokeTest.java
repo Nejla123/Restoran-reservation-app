@@ -100,6 +100,7 @@ public class SmokeTest {
 		makeReservation.clickOnFindTableButton2();
 		makeReservation.clickOnNearestTimeButton();
 		makeReservation.scrollDown();
+
 		makeReservation.clickOnCompleteReservationButton();
 		makeReservation.clickOnMyReservationLink();
 

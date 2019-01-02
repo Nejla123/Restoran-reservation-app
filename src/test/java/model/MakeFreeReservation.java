@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MakeFreeReservation {
 
@@ -221,7 +223,8 @@ public class MakeFreeReservation {
 	}
 
 	public void clickSearchReservationResult() throws InterruptedException {
-		Thread.sleep(1000);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(searchReservationResultElement));
 		searchReservationResultElement.click();
 
 	}
@@ -316,6 +319,8 @@ public class MakeFreeReservation {
 	}
 
 	public void clickOnCompleteReservationButton() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(completeReservationButton));
 		completeReservationButton.click();
 		Thread.sleep(2000);
 	}
