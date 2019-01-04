@@ -1,4 +1,4 @@
-package adminPanel;
+package admin;
 
 import java.awt.AWTException;
 

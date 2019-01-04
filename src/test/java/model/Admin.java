@@ -17,6 +17,9 @@ public class Admin {
 	@FindBy(xpath = "//*[@id=\"js-navbar-collapse\"]/ul/li[4]/a")
 	WebElement adminLink;
 
+	@FindBy(xpath = "/html/body/div[2]/div/div/div/div[5]/div/div[2]/form/div/div[1]/div[8]")
+	WebElement succesMessageForCreatedUser;
+
 	@FindBy(xpath = "/html/body/div[2]/div/div/ul/li[2]/a")
 	WebElement restaurantSectionInAdmin;
 
@@ -139,6 +142,39 @@ public class Admin {
 
 	@FindBy(xpath = "/html/body/div[2]/div/div/div/div[2]/div/div[2]/form/div[2]/div[2]/div[2]/button")
 	WebElement saveRestaurantButton;
+
+	@FindBy(xpath = "//*[@id=\"firstName\"]")
+	WebElement firstNameField;
+
+	@FindBy(xpath = "//*[@id=\"lastName\"]")
+	WebElement lastNameField;
+
+	@FindBy(xpath = "//*[@id=\"email\"]")
+	WebElement emailField;
+
+	@FindBy(xpath = "//*[@id=\"phone\"]")
+	WebElement phoneNumberField;
+
+	@FindBy(xpath = "/html/body/div[2]/div/div/div/div[5]/div/div[2]/form/div/div[1]/div[5]/div[1]/select")
+	WebElement countryFieldforUserSection;
+
+	@FindBy(xpath = "/html/body/div[2]/div/div/div/div[5]/div/div[2]/form/div/div[1]/div[5]/div[2]/select")
+	WebElement cityFieldforUserSection;
+
+	@FindBy(xpath = "//*[@id=\"password\"]")
+	WebElement passwordField;
+
+	@FindBy(xpath = "//*[@id=\"confirmPassword\"]")
+	WebElement confirmPasswordField;
+
+	@FindBy(xpath = "/html/body/div[2]/div/div/div/div[5]/div/div[2]/form/div/div[2]/div[2]/button")
+	WebElement saveUserButton;
+
+	@FindBy(xpath = "/html/body/div[2]/div/div/ul/li[5]/a")
+	WebElement usersLink;
+
+	@FindBy(xpath = "/html/body/div[2]/div/div/div/div[5]/div/div[1]/div[1]/ul/li[2]/button")
+	WebElement addUserButton;
 
 	public Admin(WebDriver driver) {
 		this.driver = driver;
@@ -356,4 +392,55 @@ public class Admin {
 		uploadLogoImage.click();
 	}
 
+	public void clickOnFirstNameField(String firstNameField2) {
+		firstNameField.sendKeys(firstNameField2);
+	}
+
+	public void clickOnLastNameField(String lastNameField2) {
+		lastNameField.sendKeys(lastNameField2);
+	}
+
+	public void setEmailField(String emailField2) {
+		emailField.sendKeys(emailField2);
+	}
+
+	public void setPhoneNumberField(String phoneNumberField2) {
+		phoneNumberField.sendKeys(phoneNumberField2);
+	}
+
+	public void chooseCountryForUser() {
+		countryFieldforUserSection.click();
+		countryFieldforUserSection.sendKeys(Keys.ARROW_DOWN, Keys.ENTER);
+	}
+
+	public void chooseCityForUser() {
+		cityFieldforUserSection.click();
+		cityFieldforUserSection.sendKeys(Keys.ARROW_DOWN, Keys.ENTER);
+	}
+
+	public void setPassword(String passwordField2) {
+		passwordField.sendKeys(passwordField2);
+	}
+
+	public void confirmPasswordField(String confirmPasswordField2) {
+		confirmPasswordField.sendKeys(confirmPasswordField2);
+	}
+
+	public void clickOnSaveUserButton() {
+		saveUserButton.click();
+	}
+
+	public void clickOnUsersLInk() {
+		usersLink.click();
+
+	}
+
+	public void clickOnAddUserButton() {
+		addUserButton.click();
+	}
+
+	public String getCompletedCreatedUserClass() {
+		String succes = succesMessageForCreatedUser.getAttribute("class");
+		return succes;
+	}
 }
