@@ -2,6 +2,7 @@ package admin;
 
 import java.awt.AWTException;
 
+import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -93,6 +94,11 @@ public class AddRestaurant {
 		admin.clickOnReservationSection();
 		admin.setdefaultLength(defaultLength);
 		admin.clickOnSaveRestaurantButton();
+		String alertSuccessfully = admin.getCreatedRestaurantClass();
+
+		Assert.assertEquals(alertSuccessfully, "alert alert-success ng-binding ng-scope");
+
+		setupEnviroment.getDriver().close();
 
 	}
 }

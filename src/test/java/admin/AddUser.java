@@ -10,29 +10,36 @@ import config.SetupEnvironment;
 import model.Admin;
 import model.MakeFreeReservation;
 
-public class AddCategory {
+public class AddUser {
 
 	private SetupEnvironment setupEnviroment;
 	private MakeFreeReservation makeReservation;
 	private Admin admin;
+
 	private String baseURL = "https://ridvansrestaurantclient.herokuapp.com/";
 	private String loginEmailField = "ridvan_appa@hotmail.com";
 	private String loginPasswordField = "admin";
-	private int categoryLenght = 5;
-	// private String categoryNameField = "gluten frreeee";
-	private String categoryNameField;
+	private String firstNameField = "Amy";
+	private String lastNameField = "lFid";
+	private int emailPrefixLenght = 5;
+	private String emailSufix = "@gmail.com";
+	private String emailField;
+	private String phoneNumberField = "033777777";
+	private String passwordField = "amy123123";
+	private String confirmPasswordField = "amy123123";
 
-	public void generateRandomCategory() {
+	public void generateRandomEmail() {
+
 		String allowedCharacters = "abcdefghijklmnopqrstuvwxyz1234567890";
 		Random random = new Random();
-		String randomCategoryWord = "";
-		for (int i = 0; i < categoryLenght; i++) {
+		String randomEmailPrefix = "";
+		for (int i = 0; i < emailPrefixLenght; i++) {
+			// length of the random string.
 			int index = random.nextInt(allowedCharacters.length());
 			char randomCharacter = allowedCharacters.charAt(index);
-			randomCategoryWord = randomCategoryWord + randomCharacter;
+			randomEmailPrefix = randomEmailPrefix + randomCharacter;
 		}
-		categoryNameField = randomCategoryWord;
-
+		emailField = randomEmailPrefix + emailSufix;
 	}
 
 	@BeforeTest
@@ -46,7 +53,7 @@ public class AddCategory {
 	}
 
 	@Test(priority = 1)
-	public void testAddRestaurant() throws InterruptedException {
+	public void testAddUser() throws InterruptedException {
 		setupEnviroment.getDriver().get(baseURL);
 
 		makeReservation.clickOnLoginLink();
@@ -54,13 +61,25 @@ public class AddCategory {
 		makeReservation.setLoginPasswordField(loginPasswordField);
 		makeReservation.clickOnLoginButton();
 		admin.clickOnAdminLink();
-		admin.clickOnCategoriesSection();
-		admin.clickOnAddCategeryButton();
-		generateRandomCategory();
-		admin.setCategoryNameField(categoryNameField);
-		admin.clickOnCreateCategoryButton();
-		String alertForCreatedCategory = admin.getCreatedCategoryClass();
-		Assert.assertEquals(alertForCreatedCategory, "alert alert-success ng-binding ng-scope");
+		admin.clickOnUsersLInk();
+		admin.clickOnAddUserButton();
+
+		admin.clickOnFirstNameField(firstNameField);
+		admin.clickOnLastNameField(lastNameField);
+		generateRandomEmail();
+		admin.setEmailField(emailField);
+		admin.setPhoneNumberField(phoneNumberField);
+		admin.chooseCountryForUser();
+		admin.chooseCityForUser();
+		makeReservation.scrollDownLittle();
+		admin.setPassword(passwordField);
+		admin.confirmPasswordField(confirmPasswordField);
+		admin.clickOnSaveUserButton();
+		makeReservation.scrollDown();
+
+		String succes = admin.getCompletedCreatedUserClass();
+		Assert.assertEquals(succes, "alert alert-success ng-binding ng-scope");
 		setupEnviroment.getDriver().close();
+
 	}
 }

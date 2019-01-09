@@ -20,6 +20,9 @@ public class Admin {
 	@FindBy(xpath = "/html/body/div[2]/div/div/div/div[5]/div/div[2]/form/div/div[1]/div[8]")
 	WebElement succesMessageForCreatedUser;
 
+	@FindBy(xpath = "/html/body/div[2]/div/div/div/div[2]/div/div[2]/form/div[2]/div[2]/div[2]/div")
+	WebElement succesMessageForCreatedRestaurant;
+
 	@FindBy(xpath = "/html/body/div[2]/div/div/ul/li[2]/a")
 	WebElement restaurantSectionInAdmin;
 
@@ -175,6 +178,18 @@ public class Admin {
 
 	@FindBy(xpath = "/html/body/div[2]/div/div/div/div[5]/div/div[1]/div[1]/ul/li[2]/button")
 	WebElement addUserButton;
+
+	@FindBy(xpath = "/html/body/div[2]/div/div/div/div[2]/div/div[2]/form/div[2]/div[2]/div[2]/div")
+	WebElement messageForNoInputData;
+
+	@FindBy(xpath = "/html/body/div[2]/div/div/div/div[2]/div/div[2]/form/div[1]/div/div[1]/div/ng-form/div[1]/div[1]/label[1]")
+	WebElement invalidLogoImage;
+
+	@FindBy(xpath = "//*[@id=\"restaurantName\"]")
+	WebElement invalidName;
+
+	@FindBy(xpath = "/html/body/div[2]/div/div/div/div[2]/div/div[2]/form/div[1]/div/div[1]/div/ng-form/div[3]/div[1]/div[2]")
+	WebElement invalidCategories;
 
 	public Admin(WebDriver driver) {
 		this.driver = driver;
@@ -442,5 +457,31 @@ public class Admin {
 	public String getCompletedCreatedUserClass() {
 		String succes = succesMessageForCreatedUser.getAttribute("class");
 		return succes;
+	}
+
+	public String getCreatedRestaurantClass() {
+		String alertSuccessfully = succesMessageForCreatedRestaurant.getAttribute("class");
+		return alertSuccessfully;
+	}
+
+	public String getNoInputDataRestaurantClass() {
+		String alertForInvalidFieldInForm = messageForNoInputData.getAttribute("class");
+		return alertForInvalidFieldInForm;
+	}
+
+	public String getLogoImageClass() {
+		String emptyLogoImage = invalidLogoImage.getAttribute("class");
+		return emptyLogoImage;
+	}
+
+	public String getNameFieldClass() {
+		String emptyNameField = invalidName.getAttribute("class");
+		return emptyNameField;
+	}
+
+	public String getCategoriesFieldClass() {
+		String emptyCategoriesField = invalidCategories.getAttribute("class");
+
+		return emptyCategoriesField;
 	}
 }

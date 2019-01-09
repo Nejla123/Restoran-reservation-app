@@ -63,6 +63,7 @@ public class AddLocation {
 		admin.clickOnCreateLocationButton();
 		String alert = admin.getCreatedLocationClass();
 		Assert.assertEquals(alert, "alert alert-success ng-binding ng-scope");
+		setupEnviroment.getDriver().close();
 
 	}
 }

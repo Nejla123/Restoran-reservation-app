@@ -1,39 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]">
-  <test name="Test1(failed)" preserve-order="true">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)" preserve-order="true">
     <classes>
-      <class name="test.regression.CreateAccountFillFields">
+      <class name="admin.AddUser">
         <methods>
-          <include name="finishedClass"/>
-          <include name="setupEnviromnent"/>
-          <include name="startClass"/>
-        </methods>
-      </class>
-      <class name="test.regression.MakeReservationFromPopularLocations">
-        <methods>
-          <include name="finishedClass"/>
-          <include name="testMakeReservationFromPopularLocations"/>
-          <include name="startClass"/>
-          <include name="setupEnviromnent"/>
-        </methods>
-      </class>
-    </classes>
-  </test>
-  <test name="Test2(failed)" preserve-order="true">
-    <classes>
-      <class name="test.regression.CreateAccountFillFields">
-        <methods>
-          <include name="finishedClass"/>
-          <include name="setupEnviromnent"/>
-          <include name="startClass"/>
-          <include name="testCreateAccountFillField"/>
-        </methods>
-      </class>
-      <class name="test.regression.MakeReservationFromPopularLocations">
-        <methods>
-          <include name="finishedClass"/>
-          <include name="startClass"/>
+          <include name="testAddUser"/>
           <include name="setupEnviromnent"/>
         </methods>
       </class>

@@ -3,11 +3,9 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)" preserve-order="true">
     <classes>
-      <class name="test.regression.MakeReservationFromPopularLocations">
+      <class name="admin.AddUser">
         <methods>
-          <include name="finishedClass"/>
-          <include name="testMakeReservationFromPopularLocations"/>
-          <include name="startClass"/>
+          <include name="testAddUser"/>
           <include name="setupEnviromnent"/>
         </methods>
       </class>
